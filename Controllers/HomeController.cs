@@ -7,6 +7,7 @@ namespace FoodStore.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        SouqcomContext products = new SouqcomContext();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -15,11 +16,11 @@ namespace FoodStore.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(products);
         }
         public IActionResult Menu()
         {
-            return View();
+            return View(products);
         }
         public IActionResult Privacy()
         {
