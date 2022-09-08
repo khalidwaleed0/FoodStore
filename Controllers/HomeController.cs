@@ -7,7 +7,7 @@ namespace FoodStore.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        SouqcomContext products = new SouqcomContext();
+        SouqcomContext db = new SouqcomContext();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -16,11 +16,18 @@ namespace FoodStore.Controllers
 
         public IActionResult Index()
         {
-            return View(products);
+            return View(db);
+        }
+        [HttpPost]
+        public IActionResult SubmitReview(Review model)
+        {
+            db.Reviews.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("index");
         }
         public IActionResult Menu()
         {
-            return View(products);
+            return View(db);
         }
         public IActionResult Privacy()
         {
