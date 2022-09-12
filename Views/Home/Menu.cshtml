@@ -18,7 +18,10 @@
                 {
                      <li data-filter=".@category.Name">@category.Name</li>
                 }
+
+
             }
+
         </ul>
 
         <div class="filters-content">
@@ -32,6 +35,7 @@
                                 <div>
                                     <div class="img-box">
                                         <img src="@product.Photo" alt="">
+                                       
                                     </div>
                                     <div class="detail-box">
                                         <h5>
@@ -43,7 +47,11 @@
                                         <div class="options">
                                             <h6>
                                                 $@product.Price
+                                              
                                             </h6>
+
+                                           
+
                                             <a href="">
                                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                                                 <g>
@@ -52,6 +60,7 @@
                          c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
                                           </g>
                                         </g>
+                                       
                                                 <g>
                                                 <g>
                                                 <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
@@ -98,21 +107,39 @@
                                         </g>
                                       </svg>
                                             </a>
+
+
                                         </div>
+
+
+                                       
+
+
+
+                                        <a  class="btn-primary"  asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                                        <a class="btn-success" asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">Details</a>
+                                        <a class="btn-danger" asp-controller="Products" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     }
-                    
+                   
                 }
+             
+                
 
             </div>
         </div>
+
+
+
         <div class="btn-box">
             <a href="">
                 View More
             </a>
+
+
         </div>
     </div>
 </section>
